@@ -8,3 +8,4 @@
 	insteadOf = https://github.com/
 [core]
 	eol = lf
+	excludesfile = /Users/thxph/.gitignore_global

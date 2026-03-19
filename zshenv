@@ -56,15 +56,15 @@ fi
 # set PATH
 if uname | grep Darwin >> /dev/null; then
     path_prepend=( $path_prepend /usr/local/bin )
-    path_append=( $path_append /usr/texbin /usr/local/opt/python/libexec/bin ~/Library/Python/2.7/bin )
+    path_append=( $path_append /usr/texbin /usr/local/opt/python/libexec/bin /opt/homebrew/bin )
 fi
 
-if [ -f "$HOME/.asdf" ]; then
+if [ -d "$HOME/.asdf" ]; then
     path_append=( $path_append ${ASDF_DATA_DIR:-$HOME/.asdf}/shims )
 fi
 
 export GOPATH=$HOME/go
-path=( $path_prepend $path $path_append $HOME/go/bin $HOME/wip/bin $HOME/bin . )
+path=( $path_prepend $path $path_append $HOME/go/bin $HOME/.local/bin $HOME/wip/bin $HOME/bin . )
 typeset -U path
 
 export path_prepend
@@ -77,3 +77,4 @@ if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
 
+export PATH="/Users/thxph/src/thxph/flutter/bin:$PATH"
