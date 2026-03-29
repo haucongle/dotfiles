@@ -40,7 +40,7 @@ plugins=(
     thxph-fzf \
     thanh)
 if uname | grep Darwin >> /dev/null; then
-    plugins+=(osx)
+    plugins+=(macos)
 elif uname | grep Linux >> /dev/null; then
     plugins+=(copypath copyfile copybuffer)
 fi
@@ -60,3 +60,6 @@ source $ZSH/oh-my-zsh.sh
 #export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Added by Antigravity
+export PATH="/Users/thxph/.antigravity/antigravity/bin:$PATH"
